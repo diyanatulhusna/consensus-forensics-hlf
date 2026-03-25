@@ -1,0 +1,23 @@
+name: Network-Submit-Phase
+version: "2.0.0"
+caliper:
+  blockchain: fabric
+
+channels:
+  - channelName: forensic-channel
+    contracts:
+      - id: forensicContract
+
+organizations:
+  - mspid: Org1MSP
+    identities:
+      certificates:
+        - name: 'GatewayCollector'
+          clientPrivateKey:
+            # Diisi otomatis oleh script (auto-pick *_sk)
+            path: '__GW_PRIVATE_KEY__'
+          clientSignedCert:
+            path: '/home/labnuc/2labforensic/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/GatewayCollector@org1.example.com/msp/signcerts/cert.pem'
+    connectionProfile:
+      path: '/home/labnuc/2labforensic/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.yaml'
+      discover: true

@@ -1,0 +1,23 @@
+name: Network-Retrieve-Phase
+version: "2.0.0"
+caliper:
+  blockchain: fabric
+
+channels:
+  - channelName: forensic-channel
+    contracts:
+      - id: forensicContract
+
+organizations:
+  - mspid: Org2MSP
+    identities:
+      certificates:
+        - name: 'Judge'
+          clientPrivateKey:
+            # Diisi otomatis oleh script (auto-pick *_sk)
+            path: '__JUDGE_PRIVATE_KEY__'
+          clientSignedCert:
+            path: '/home/labnuc/2labforensic/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/users/Judge@org2.example.com/msp/signcerts/cert.pem'
+    connectionProfile:
+      path: '/home/labnuc/2labforensic/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/connection-org2.yaml'
+      discover: true
