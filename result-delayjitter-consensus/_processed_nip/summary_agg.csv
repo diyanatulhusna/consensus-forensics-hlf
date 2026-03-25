@@ -1,0 +1,13 @@
+consensus,batch,tps,rtt_mean_ms,round_label,reps,succ_total,fail_total,send_rate_mean,throughput_mean,avg_latency_mean_s,total_tx,fail_rate
+Raft,100,75,0,submitEvidence,5,22525,0,75.1,72.47999999999999,0.9259999999999999,22525,0.0
+Raft,100,75,50,submitEvidence,5,22525,0,75.1,72.38000000000001,1.768,22525,0.0
+Raft,100,75,100,submitEvidence,5,22525,0,75.1,70.4,4.192,22525,0.0
+SmartBFT,100,75,0,submitEvidence,5,22525,0,75.1,73.16,1.048,22525,0.0
+SmartBFT,100,75,50,submitEvidence,5,22525,0,75.1,71.64,1.8,22525,0.0
+SmartBFT,100,75,100,submitEvidence,5,22525,0,75.1,59.52,8.370000000000001,22525,0.0
+Raft,100,75,0,retrieveEvidenceAndLog,5,22525,0,75.1,72.47999999999999,0.9119999999999999,22525,0.0
+Raft,100,75,50,retrieveEvidenceAndLog,5,22525,0,75.1,72.4,1.572,22525,0.0
+Raft,100,75,100,retrieveEvidenceAndLog,5,22525,0,75.1,72.28,2.5439999999999996,22525,0.0
+SmartBFT,100,75,0,retrieveEvidenceAndLog,5,22525,0,75.1,73.1,1.04,22525,0.0
+SmartBFT,100,75,50,retrieveEvidenceAndLog,5,22525,0,75.1,71.78,1.6780000000000002,22525,0.0
+SmartBFT,100,75,100,retrieveEvidenceAndLog,5,22525,0,75.1,67.28,3.978,22525,0.0
