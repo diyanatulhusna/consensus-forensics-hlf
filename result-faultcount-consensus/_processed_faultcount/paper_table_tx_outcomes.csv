@@ -1,0 +1,17 @@
+Consensus,Fault count (k),Operation,Successful TX,Failed TX,Total TX,Fail rate
+Raft,0,Submit,30025,0,30025,0.00
+SmartBFT,0,Submit,30022,0,30022,0.00
+Raft,0,Retrieve,30025,0,30025,0.00
+SmartBFT,0,Retrieve,30025,0,30025,0.00
+Raft,1,Submit,30025,0,30025,0.00
+SmartBFT,1,Submit,30025,0,30025,0.00
+Raft,1,Retrieve,30025,0,30025,0.00
+SmartBFT,1,Retrieve,28044,1980,30024,6.59
+Raft,2,Submit,30025,0,30025,0.00
+SmartBFT,2,Submit,25090,4935,30025,16.44
+Raft,2,Retrieve,30025,0,30025,0.00
+SmartBFT,2,Retrieve,30025,0,30025,0.00
+Raft,3,Submit,30025,0,30025,0.00
+SmartBFT,3,Submit,20087,9938,30025,33.10
+Raft,3,Retrieve,30025,0,30025,0.00
+SmartBFT,3,Retrieve,30025,0,30025,0.00

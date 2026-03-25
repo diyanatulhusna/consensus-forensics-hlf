@@ -1,0 +1,4 @@
+consensus,batch,tps,k_fault,fault_family,round_label,reps,succ_total,fail_total,total_tx,send_rate_mean,throughput_mean,avg_latency_mean_s,max_latency_mean_s,fail_rate,succ_rate
+SmartBFT,100,100,1,highimpact-nested,retrieveEvidenceAndLog,5,28044,1980,30024,100.08,81.4,25.784000000000002,40.986000000000004,0.06594724220623502,0.934052757793765
+SmartBFT,100,100,2,highimpact-nested,submitEvidence,5,25090,4935,30025,100.08,81.82000000000001,16.875999999999998,26.812,0.1643630308076603,0.8356369691923398
+SmartBFT,100,100,3,highimpact-nested,submitEvidence,5,20087,9938,30025,100.08,76.46000000000001,11.088,29.701999999999998,0.3309908409658618,0.6690091590341383
