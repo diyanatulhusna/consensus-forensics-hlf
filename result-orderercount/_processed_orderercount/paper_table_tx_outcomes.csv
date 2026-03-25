@@ -1,0 +1,13 @@
+Consensus,Orderer count,Operation,Successful TX,Failed TX,Total TX,Fail rate
+Raft,4,Submit,30025,0,30025,0.00
+SmartBFT,4,Submit,30025,0,30025,0.00
+Raft,4,Retrieve,30025,0,30025,0.00
+SmartBFT,4,Retrieve,30025,0,30025,0.00
+Raft,7,Submit,30025,0,30025,0.00
+SmartBFT,7,Submit,30025,0,30025,0.00
+Raft,7,Retrieve,30025,0,30025,0.00
+SmartBFT,7,Retrieve,30025,0,30025,0.00
+Raft,10,Submit,30025,0,30025,0.00
+SmartBFT,10,Submit,30025,0,30025,0.00
+Raft,10,Retrieve,30025,0,30025,0.00
+SmartBFT,10,Retrieve,30025,0,30025,0.00
