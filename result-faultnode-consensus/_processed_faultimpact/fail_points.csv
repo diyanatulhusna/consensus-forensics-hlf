@@ -1,0 +1,4 @@
+consensus,batch,tps,fault_profile,round_label,reps,succ_total,fail_total,total_tx,send_rate_mean,throughput_mean,avg_latency_mean_s,max_latency_mean_s,fail_rate,succ_rate
+Raft,100,100,high-impact,submitEvidence,5,29525,500,30025,100.1,92.88,1.47,5.538,0.01665278934221482,0.9833472106577852
+SmartBFT,100,100,high-impact,retrieveEvidenceAndLog,5,9245,20780,30025,100.1,52.9,22.574,48.348,0.6920899250624479,0.307910074937552
+SmartBFT,100,100,high-impact,submitEvidence,5,7264,22761,30025,100.1,51.339999999999996,11.524000000000001,25.168,0.758068276436303,0.2419317235636969

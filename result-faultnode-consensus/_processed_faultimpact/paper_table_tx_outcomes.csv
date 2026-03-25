@@ -1,0 +1,9 @@
+Consensus,Fault placement,Operation,Successful TX,Failed TX,Total TX,Success rate,Fail rate
+Raft,Limited impact,Submit,30025,0,30025,100.00,0.00
+SmartBFT,Limited impact,Submit,30025,0,30025,100.00,0.00
+Raft,Limited impact,Retrieve,30025,0,30025,100.00,0.00
+SmartBFT,Limited impact,Retrieve,30024,0,30024,100.00,0.00
+Raft,High impact,Submit,29525,500,30025,98.33,1.67
+SmartBFT,High impact,Submit,7264,22761,30025,24.19,75.81
+Raft,High impact,Retrieve,30025,0,30025,100.00,0.00
+SmartBFT,High impact,Retrieve,9245,20780,30025,30.79,69.21
