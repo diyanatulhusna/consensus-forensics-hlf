@@ -1,0 +1,70 @@
+test:
+  name: 'Forensic Hybrid Consensus Benchmark (Retrieve)'
+  description: 'Retrieve+Audit benchmark (ordered transaction) menggunakan receipts hasil submit (hybrid)'
+  workers:
+    type: local
+    number: 5
+
+  rounds:
+    - label: retrieve-warmup
+      description: 'Warming up retrieve+audit path (ordered tx)'
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: /home/labnuc/2labforensic/fabric-samples/test-network/workload/retrieve-mixed-consensus.js
+        arguments:
+          role: Judge
+          storageFilter: hybrid
+          isPublic: false
+          readOnly: false
+          contractId: forensicContract
+
+          # UPDATED: audited retrieve (writes audit log)
+          funcRetrieve: retrieveEvidenceAndLog
+
+          receiptsPath: /home/labnuc/2labforensic/fabric-samples/test-network/data/receipts/SmartBFT_b10_tps200/rep1
+
+          txTimeoutSec: 120
+          requireSuccess: true
+          strict: true
+
+    - label: retrieveEvidenceAndLog
+      description: 'Retrieve evidence metadata + on-chain audit log (hybrid, ordered tx)'
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50   # 50,100,150,200
+      workload:
+        module: /home/labnuc/2labforensic/fabric-samples/test-network/workload/retrieve-mixed-consensus.js
+        arguments:
+          role: Judge
+          storageFilter: hybrid
+          isPublic: false
+          readOnly: false
+          contractId: forensicContract
+
+          # UPDATED: audited retrieve
+          funcRetrieve: retrieveEvidenceAndLog
+
+          receiptsPath: /home/labnuc/2labforensic/fabric-samples/test-network/data/receipts/SmartBFT_b10_tps200/rep1
+
+          txTimeoutSec: 600
+          requireSuccess: true
+          strict: true
+
+report:
+  options:
+    formats:
+      - html
+      - json
+
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 2
+        containers: ['all']

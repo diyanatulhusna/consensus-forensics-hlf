@@ -1,0 +1,63 @@
+test:
+  name: 'Forensic Hybrid Consensus Benchmark (Submit)'
+  description: 'Submit benchmark untuk evaluasi performa konsensus (hybrid) dengan weighted-infinite evidence'
+  workers:
+    type: local
+    number: 5
+
+  rounds:
+    # --- 1. Warm-up Submit (JANGAN AMBIL DATA INI) ---
+    - label: submit-warmup
+      description: 'Warming up the network and orderer cluster'
+      txDuration: 30
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 50
+      workload:
+        module: /home/labnuc/2labforensic/fabric-samples/test-network/workload/submit-mixed-hybrid-consensus.js
+        arguments:
+          weights: { tiny: 100, small: 175, medium: 225, large: 50 }
+          role: GatewayCollector
+          indexPath: /home/labnuc/2labforensic/fabric-samples/test-network/data/evidence_index.json
+
+          # folder warmup dipisah
+          receiptsDir: /home/labnuc/2labforensic/fabric-samples/test-network/data/receipts/SmartBFT_b10_tps200/warmup
+
+          seed: 999
+          # naikkan timeout agar tidak DEADLINE_EXCEEDED saat backlog
+          txTimeoutSec: 600
+
+    # --- 2. REAL TEST Submit (AMBIL DATA INI) ---
+    - label: submitEvidence
+      description: 'Submitting evidence metadata with Hybrid storage mode'
+      txDuration: 60
+      rateControl:
+        type: fixed-rate
+        opts:
+          tps: 200 # 50,100,150,200
+      workload:
+        module: /home/labnuc/2labforensic/fabric-samples/test-network/workload/submit-mixed-hybrid-consensus.js
+        arguments:
+          weights: { tiny: 100, small: 175, medium: 225, large: 50 }
+          role: GatewayCollector
+          indexPath: /home/labnuc/2labforensic/fabric-samples/test-network/data/evidence_index.json
+
+          # folder real submit (dipakai retrieve)
+          receiptsDir: /home/labnuc/2labforensic/fabric-samples/test-network/data/receipts/SmartBFT_b10_tps200/rep1
+
+          seed: 301
+          txTimeoutSec: 600
+
+report:
+  options:
+    formats:
+      - html
+      - json
+
+monitors:
+  resource:
+    - module: docker
+      options:
+        interval: 2
+        containers: ['all']
